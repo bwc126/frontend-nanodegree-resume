@@ -5,7 +5,6 @@ This is empty on purpose! Your code to build the resume will go here.
 var formattedName, formattedRole;
 
 var bio = {
-
   "name" : "Brian Coe",
   "role" : "Front-End Engineer",
   "contacts" : {
@@ -25,19 +24,48 @@ var bio = {
 };
 
 var work = {
+  "jobs" : [{
+      "employer" : "Parhelion Astro Domiciles, LTD.",
+      "title" : "Engineer",
+      "location" : "Vesta",
+      "dates" : "2012 to 2021",
+      "description" : ""
+  }]
+};
 
-  "position" : "Engineer",
-  "employer" : "Geminate Industries",
-  "years" : "",
-  "city" : ""
-
-}
 
 var education = {
+  "schools" : [{
+    "name" : "Drexel University",
+    "location" : "Philadelpha, PA",
+    "degree" : "Bachelor of Science",
+    "majors" : ["Materials Science and Engineering", "Biomedical Engineering"],
+    "dates" : "August 2007 to January 2010",
+    "url" : ""
+  },
+  {
+    "name" : "UMBC",
+    "location" : "Baltimore, MD",
+    "degree" : "",
+    "majors" : ["Biological Sciences", "Cultural Anthropology", "Psychology"],
+    "dates" : "September 2011 to January 2013",
+    "url" : ""
+  }],
+  "onlineCourses" : [{
+    "title" : "",
+    "school" : "",
+    "dates" : "",
+    "url" : ""
+  }]
+};
 
-  "school" : "UMBC",
-  "years" : "1.5",
-  "city" : "Baltimore, MD"
+var projects = {
+  "project" : [{
+    "title" : "",
+    "dates" : "",
+    "description" : "",
+    "images" : ""
+  }]
 
 }
 
@@ -49,11 +77,11 @@ formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
 formattedPic = HTMLbioPic.replace("%data%",bio.pictureURL);
 formattedWelcome = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
 
-formattedEmployer = HTMLworkEmployer.replace("%data%",work.employer);
-formattedWorkTitle = HTMLworkTitle.replace("%data%",work.position);
+formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[0].employer);
+formattedWorkTitle = HTMLworkTitle.replace("%data%",work.jobs[0].title);
 console.log(formattedWorkTitle);
 
-formattedSchoolName = HTMLschoolName.replace("%data%",education.school);
+formattedSchoolName = HTMLschoolName.replace("%data%",education.schools[1].name);
 
 $("#header").prepend(formattedWelcome);
 $("#header").prepend(formattedPic);
