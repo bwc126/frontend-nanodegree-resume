@@ -30,6 +30,13 @@ var work = {
       "location" : "Vesta",
       "dates" : "2012 to 2021",
       "description" : ""
+  },
+  {
+      "employer" : "Omega Technologies",
+      "title" : "Chief Engineer",
+      "location" : "Baltimore, MD",
+      "dates" : "2012 to 2021",
+      "description" : ""
   }]
 };
 
@@ -46,7 +53,7 @@ var education = {
   {
     "name" : "UMBC",
     "location" : "Baltimore, MD",
-    "degree" : "",
+    "degree" : "Bachelor of Science",
     "majors" : ["Biological Sciences", "Cultural Anthropology", "Psychology"],
     "dates" : "September 2011 to January 2013",
     "url" : ""
@@ -61,40 +68,29 @@ var education = {
 
 var projects = {
   "project" : [{
-    "title" : "",
-    "dates" : "",
-    "description" : "",
+    "title" : "Hydra Delta",
+    "dates" : "June 2014 to Present",
+    "description" : "Open Source Delta FDM 3D printer",
     "images" : ""
   }]
 
 }
 
-formattedName = HTMLheaderName.replace("%data%",bio.name);
-formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-formattedSkills = HTMLskills.replace("%data%",bio.skills.join(" "));
-formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
-formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
-formattedPic = HTMLbioPic.replace("%data%",bio.pictureURL);
-formattedWelcome = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
+if (bio.skills.length > 0) {
+  $("#header").append(HTMLskillsStart);
+  for (skill in bio.skills) {
+    var formattedSkill = HTMLskills.replace("%data%",bio.skills[skill]);
+    $("#skills").append(formattedSkill);
+  }
+}
 
-formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[0].employer);
-formattedWorkTitle = HTMLworkTitle.replace("%data%",work.jobs[0].title);
-console.log(formattedWorkTitle);
 
-formattedSchoolName = HTMLschoolName.replace("%data%",education.schools[1].name);
+if (work.jobs.length > 0) {
 
-$("#header").prepend(formattedWelcome);
-$("#header").prepend(formattedPic);
-$("#header").prepend(formattedGithub);
-$("#header").prepend(formattedEmail);
-$("#header").prepend(formattedSkills);
-$("#header").prepend(HTMLskillsStart);
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
-$("#workExperience").append(HTMLworkStart);
-$(".work-entry").append(formattedEmployer);
-$(".work-entry").append(formattedWorkTitle);
-
-$("#education").append(HTMLschoolStart);
-$(".education-entry").append(formattedSchoolName);
+  for (job in work.jobs) {
+    $("#workExperience").append(HTMLworkStart);
+    var formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
+    var formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[job].title);
+    $(".work-entry:last").append(formattedEmployer + formattedTitle);
+  }
+}
