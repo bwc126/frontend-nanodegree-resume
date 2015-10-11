@@ -126,19 +126,6 @@ work.display();
 $(document).click(function(loc) {
   logClicks(loc.pageX,loc.pageY);
 });
-//create a list of locations worked
-// function locationizer() {
-//   var locationList = [];
-//   for (var job in work.jobs) {
-//     locationList.push(work.jobs[job].location);
-//   }
-//   for (var school in education.schools) {
-//     locationList.push(education.schools[school].location);
-//   }
-//
-//   return locationList;
-// }
-// var locations = locationizer();
 //add internationalize button to the page
 $("#main").append(internationalizeButton);
 //internationalize the name
