@@ -88,6 +88,11 @@ bio.display = function() {
   $("#topContacts").append(formattedGithub);
   $("#footerContacts").append(formattedEmail);
   $("#footerContacts").append(formattedGithub);
+  //add picture and welcome message
+  var formattedPic = HTMLbioPic.replace("%data%",bio.bioPic);
+  var formattedWelcome = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
+  $("#header").append(formattedPic);
+  $("#header").append(formattedWelcome);
   //populate skills section
   if (bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
