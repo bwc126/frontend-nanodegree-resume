@@ -12,6 +12,7 @@ h6 {
   padding:0;
   margin:0;
   font-family: "Roboto", sans-serif;
+  font-weight: 200;
 }
 
 .clear-fix {
@@ -26,7 +27,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #f1f1e7;
   line-height: 48px;
   display: inline;
 }
@@ -34,7 +35,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #214b6a;
   line-height: 29px;
   padding: 10px;
 }
@@ -42,14 +43,14 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000;
+  color: #f1f1e7;
   line-height: 22px;
 }
 
 h4 {
   font-weight: bold;
   font-size: 14px;
-  color: #4a4a4a;
+  color: #214b6a;
   line-height: 17px;
 }
 
@@ -65,7 +66,7 @@ h5 {
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #f1f1e7;
   line-height: 16px;
   float: left;
 }
@@ -73,7 +74,7 @@ h5 {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #f1f1e7;
   line-height: 16px;
   float: right;
 
@@ -100,8 +101,12 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #f1f1e7;
   display: none;
+}
+
+#main {
+  background-color: #0F2230;
 }
 
 .orange {
@@ -112,9 +117,13 @@ a {
   color: #f5ae23;
 }
 
+.blue-text {
+  color: #214b6a;
+}
+
 .white-text {
   font-weight: bold;
-  color: #fff;
+  color: #f1f1e7;
 }
 
 .gray {
@@ -129,7 +138,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+
 }
 
 .flex-box {

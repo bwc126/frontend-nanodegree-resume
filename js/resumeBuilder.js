@@ -1,38 +1,36 @@
 //bio contains basic personal and contact info
 var bio = {
-  "name" : "Brian Coe",
-  "role" : "Front-End Engineer",
+  "name" : "Brian W Coe",
+  "role" : "UI Engineer",
   "contacts" : {
   "location" : "Ashburn, VA",
-  "email" : "myEmail@domain.com",
+  "email" : "bwc126@gmail.com",
   "github" : "https://github.com/bwc126"
   },
-  "bioPic" : "http://placehold.it/200x200",
-  "welcomeMessage" : "Greetings and Salutations",
+  "bioPic" : "https://s3.amazonaws.com/accredible-api-users/images/33122/original/1440302146071?1441671386",
+  "welcomeMessage" : "Thank you for your consideration!",
   "skills" : [
-    "Engineering",
-    "Programming",
-    "Calculus",
     "Systems Thinking",
-    "Spanish"
+    "Programming",
+    "Systems Engineering"
   ],
 
 };
 //work contains info on past employment
 var work = {
   "jobs" : [{
-      "employer" : "Parhelion Astro Domiciles, LTD.",
-      "title" : "Engineer",
-      "location" : "Ashburn, VA",
-      "dates" : "2012 to 2021",
-      "description" : "je suis le description"
+      "employer" : "Drexel University Biomaterials Laboratory",
+      "title" : "Associate Research Engineer",
+      "location" : "Philadelpha, PA",
+      "dates" : "2008",
+      "description" : "Synthesize microparticle therapeutic systems and characterize them"
   },
   {
-      "employer" : "Omega Technologies",
+      "employer" : "Geminate LLC",
       "title" : "Chief Engineer",
       "location" : "Baltimore, MD",
-      "dates" : "2012 to 2021",
-      "description" : "je suis le decription aussi"
+      "dates" : "2012-2014",
+      "description" : "Develop new additive manufacturing systems"
   }]
 };
 //education contains info on academic and self-directed learning
@@ -42,7 +40,7 @@ var education = {
     "location" : "Philadelpha, PA",
     "degree" : "Bachelor of Science",
     "majors" : ["Materials Science and Engineering", "Biomedical Engineering"],
-    "dates" : "August 2007 to January 2010",
+    "dates" : "2007-2010",
     "url" : ""
   },
   {
@@ -50,7 +48,7 @@ var education = {
     "location" : "Baltimore, MD",
     "degree" : "Bachelor of Science",
     "majors" : ["Biological Sciences", "Cultural Anthropology", "Psychology"],
-    "dates" : "September 2011 to January 2013",
+    "dates" : "2011-2013",
     "url" : ""
   }],
   "onlineCourses" : [{
@@ -64,13 +62,13 @@ var education = {
 var projects = {
   "projects" : [{
     "title" : "Hydra Delta",
-    "dates" : "June 2014 to Present",
+    "dates" : "2014-2015",
     "description" : "Open Source Delta FDM 3D printer",
     "image" : ""
     },
     {
-    "title" : "Personal Website",
-    "dates" : "August 2015 to Present",
+    "title" : "Personal Portfolio Website",
+    "dates" : "2015",
     "description" : "Personal website, inspired and tutored by Udacity",
     "image" : ""
     }
@@ -150,8 +148,8 @@ projects.display = function() {
     $(".project-entry:last").append(formattedProjectImage);
   };
 };
-
 projects.display();
+//populate the education section with schools and online courses
 education.display = function() {
   for (var school in education.schools) {
     $("#education").append(HTMLschoolStart);
@@ -182,4 +180,5 @@ education.display = function() {
   }
 }
 education.display();
+//add the google map
 $("#mapDiv").append(googleMap);
