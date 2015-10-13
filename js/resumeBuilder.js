@@ -58,7 +58,7 @@ var education = {
     "url" : "www.lel.org"
   }]
 };
-//projects contains info on personal projects
+//projects contains objects which describe various personal projects
 var projects = {
   "projects" : [{
     "title" : "Hydra Delta",
@@ -135,7 +135,6 @@ function inName(name) {
 }
 //populate projects section
 projects.display = function() {
-//append project info to projects section, using HTMLprojectStart for each new project
   for (var proj in projects.projects) {
     $("#projects").append(HTMLprojectStart);
     formattedProjectTitle = HTMLprojectTitle.replace("%data%",projects.projects[proj].title);

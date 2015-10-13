@@ -194,6 +194,13 @@ span {
   align-content: right;
 }
 
+#topContacts .blue-text {
+  margin: 0 2% 0 0;
+}
+
+#topContacts .white-text {
+  font-size: 14px;
+}
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
