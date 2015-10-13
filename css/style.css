@@ -12,7 +12,7 @@ h6 {
   padding:0;
   margin:0;
   font-family: "Roboto", sans-serif;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 .clear-fix {
@@ -25,6 +25,10 @@ h6 {
   padding: 0 5%;
 }
 
+.education-entry {
+  color: lightslategray;
+}
+
 h1 {
   font-size: 40px;
   color: #f1f1e7;
@@ -35,13 +39,12 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #214b6a;
+  color: #f1f1e7;
   line-height: 29px;
   padding: 10px;
 }
 
 h3 {
-  font-style: italic;
   font-size: 20px;
   color: #f1f1e7;
   line-height: 22px;
@@ -66,7 +69,7 @@ h5 {
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #f1f1e7;
+  color: gray;
   line-height: 16px;
   float: left;
 }
@@ -82,19 +85,22 @@ h5 {
 
 p {
   font-size: 14px;
-  color: #333;
+  color: lightsteelblue;
   line-height: 21px;
 }
 
 a {
-  color: #1199c3;
+  color: #f1f1e7;
   text-decoration: none;
   margin-top: 10px;
   display: block;
 }
 
+em {
+  color: lightsteelblue;
+}
+
 .welcome-message {
-  font-style: italic;
   font-size: 18px;
   color: #f3f3f3;
   line-height: 28px;
@@ -133,12 +139,16 @@ a {
 }
 
 .dark-gray {
-  background-color: #4a4a4a;
+  background-color: #2a2a2a;
 }
 
-/* TODO: Replace with image later */
 #header {
 
+}
+
+.role {
+  text-transform: uppercase;
+  margin: 0 0 0 1%;
 }
 
 .flex-box {
@@ -160,9 +170,12 @@ ul {
 
 .biopic {
   float: left;
-  padding: 10px;
-  width: 200px;
+  padding: 0;
+  margin: 0 1% 0 0;
+  height: 200px;
+  max-width: 200px;
   display: none;
+  border: 3px solid dimgray;
 }
 
 img {
@@ -170,11 +183,15 @@ img {
 }
 
 span {
-  padding: 5px;
+  margin: 0 1% 0 0;
 }
 
 #lets-connect {
   text-align: center;
+}
+
+.project-entry img {
+  align-content: right;
 }
 
 /* Media queries to handle various device widths */

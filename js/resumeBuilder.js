@@ -8,7 +8,7 @@ var bio = {
   "github" : "https://github.com/bwc126"
   },
   "bioPic" : "https://s3.amazonaws.com/accredible-api-users/images/33122/original/1440302146071?1441671386",
-  "welcomeMessage" : "Thank you for your consideration!",
+  "welcomeMessage" : "Thanks for Your Consideration",
   "skills" : [
     "Systems Thinking",
     "Programming",
@@ -30,7 +30,7 @@ var work = {
       "title" : "Chief Engineer",
       "location" : "Baltimore, MD",
       "dates" : "2012-2014",
-      "description" : "Develop new additive manufacturing systems"
+      "description" : "Develop novel additive manufacturing systems"
   }]
 };
 //education contains info on academic and self-directed learning
@@ -64,13 +64,13 @@ var projects = {
     "title" : "Hydra Delta",
     "dates" : "2014-2015",
     "description" : "Open Source Delta FDM 3D printer",
-    "image" : ""
+    "image" : "https://github.com/bwc126/Project-1-Portfolio/blob/master/images/Hydra2-S.png?raw=true"
     },
     {
     "title" : "Personal Portfolio Website",
     "dates" : "2015",
     "description" : "Personal website, inspired and tutored by Udacity",
-    "image" : ""
+    "image" : "https://raw.githubusercontent.com/bwc126/Project-1-Portfolio/master/images/bootstrap.png"
     }
   ]
 };
@@ -130,7 +130,7 @@ $("#main").append(internationalizeButton);
 function inName(name) {
   var names = name.trim().split(" ");
   var first = names[0];
-  var last = names[1];
+  var last = names[names.length-1];
   return (first.slice(0,1).toUpperCase() + first.slice(1).toLowerCase() + " " + last.toUpperCase());
 }
 //populate projects section
@@ -154,10 +154,10 @@ education.display = function() {
   for (var school in education.schools) {
     $("#education").append(HTMLschoolStart);
     formattedSchoolName = HTMLschoolName.replace("%data%",education.schools[school].name);
-    formattedSchoolDegree = HTMLschoolName.replace("%data%",education.schools[school].degree);
-    formattedSchoolDates = HTMLschoolName.replace("%data%",education.schools[school].dates);
-    formattedSchoolLocation = HTMLschoolName.replace("%data%",education.schools[school].location);
-    formattedSchoolMajors = HTMLschoolName.replace("%data%",education.schools[school].majors.join(", "));
+    formattedSchoolDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
+    formattedSchoolDates = HTMLschoolDates.replace("%data%",education.schools[school].dates);
+    formattedSchoolLocation = HTMLschoolLocation.replace("%data%",education.schools[school].location);
+    formattedSchoolMajors = HTMLschoolMajor.replace("%data%",education.schools[school].majors.join(", "));
     $(".education-entry:last").append(formattedSchoolName);
     $(".education-entry:last").append(formattedSchoolDegree);
     $(".education-entry:last").append(formattedSchoolDates);
