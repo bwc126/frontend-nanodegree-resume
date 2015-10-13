@@ -113,6 +113,11 @@ em {
 
 #main {
   background-color: #0F2230;
+  margin: 5% 0 0 0;
+}
+
+#navTag {
+  margin: 2% 0 0 2%;
 }
 
 .orange {
