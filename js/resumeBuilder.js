@@ -38,7 +38,7 @@ var education = {
   "schools" : [{
     "name" : "Drexel University",
     "location" : "Philadelpha, PA",
-    "degree" : "Bachelor of Science",
+    "degree" : "Bachelor of Science (Incomplete)",
     "majors" : ["Materials Science and Engineering", "Biomedical Engineering"],
     "dates" : "2007-2010",
     "url" : ""
@@ -46,16 +46,16 @@ var education = {
   {
     "name" : "UMBC",
     "location" : "Baltimore, MD",
-    "degree" : "Bachelor of Science",
+    "degree" : "Bachelor of Science (Incomplete)",
     "majors" : ["Biological Sciences", "Cultural Anthropology", "Psychology"],
     "dates" : "2011-2013",
     "url" : ""
   }],
   "onlineCourses" : [{
-    "title" : "How to do Neat Stuff",
-    "school" : "Interwebs University",
-    "dates" : "August 2015 to September 2015",
-    "url" : "www.lel.org"
+    "title" : "Intro to Computer Science",
+    "school" : "Udacity",
+    "dates" : "2015",
+    "url" : "https://www.udacity.com/certificate/cs101"
   }]
 };
 //projects contains objects which describe various personal projects
@@ -150,19 +150,24 @@ projects.display = function() {
 projects.display();
 //populate the education section with schools and online courses
 education.display = function() {
+  //conventional schools
   for (var school in education.schools) {
     $("#education").append(HTMLschoolStart);
     formattedSchoolName = HTMLschoolName.replace("%data%",education.schools[school].name);
-    formattedSchoolDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
     formattedSchoolDates = HTMLschoolDates.replace("%data%",education.schools[school].dates);
     formattedSchoolLocation = HTMLschoolLocation.replace("%data%",education.schools[school].location);
     formattedSchoolMajors = HTMLschoolMajor.replace("%data%",education.schools[school].majors.join(", "));
     $(".education-entry:last").append(formattedSchoolName);
-    $(".education-entry:last").append(formattedSchoolDegree);
     $(".education-entry:last").append(formattedSchoolDates);
     $(".education-entry:last").append(formattedSchoolLocation);
     $(".education-entry:last").append(formattedSchoolMajors);
+    //control logic to append degrees only if they were completed
+    if (education.schools[school].degree.indexOf("Incomplete") == -1) {
+      formattedSchoolDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
+      $(".education-entry:last").append(formattedSchoolDegree);
+    }
   }
+  //online courses
   if (education.onlineCourses.length > 0) {
     $("#education").append(HTMLonlineClasses);
     for (var course in education.onlineCourses) {
