@@ -206,6 +206,14 @@ span {
 #topContacts .white-text {
   font-size: 14px;
 }
+
+#navbar li a:focus,
+#navbar li a:hover
+ {
+  background-color: #4a4a4a;
+  color: lightsteelblue;
+}
+
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
